@@ -96,12 +96,23 @@ para plural informal cuando proceda; léxico peninsular. No mezcles paradigmas e
 texto. El voseo coherente («Si encontrás, avisame») es legítimo solo si se pidió; sin ese
 pedido es fallo dialectal. Evita calcos que dificulten entender, sin corregir una variante
 pedida por ser distinta. No impongas frases cortas en serie: una subordinada bien construida
-puede explicar mejor una condición. Revisa gerundios si confunden secuencia o sujeto, no por
-terminar en -ando/-iendo. No elimines adverbios en -mente que delimiten una afirmación.
+puede explicar mejor una condición. No elimines adverbios en -mente que delimiten una afirmación.
 Respeta ¿?, ¡!, comillas, rayas de diálogo y puntuación española; no apliques reglas de
 contracciones inglesas. No cambies separadores decimales, unidades o fechas de forma ambigua.
 Separa actos distintos (informe frente a petición con plazo) en párrafos propios y resuelve
 la doble cobertura («sugiere… podría ser aproximadamente») sin reforzar la afirmación.
+
+### Gerundio: qué corregir y qué no
+
+Terminar en -ando/-iendo no es un defecto: el gerundio expresa bien simultaneidad,
+anterioridad inmediata, modo, causa o condición. Corrige solo los tres usos que la norma
+rechaza. **De posterioridad:** «Estudió en Madrid, yendo después a Buenos Aires»; la acción
+es posterior, no simultánea, así que conviene coordinar o subordinar. **Especificativo**,
+el que modifica a un sustantivo como adjetivo restrictivo: «una ley reformando las tarifas»
+→ «que reforma las tarifas»; solo «agua hirviendo» y «clavo ardiendo» están lexicalizados.
+**Sin sujeto recuperable:** el gerundio cuyo agente no es el de la oración principal ni forma
+construcción absoluta deja la acción sin quién. Una apertura con gerundio bien construida no
+sobra; una cadena de ellas sí uniforma el ritmo y merece variarse.
 
 ## Conservar el material del autor
 

@@ -126,7 +126,7 @@ Las comprobaciones realizadas se documentan en [evals/VALIDATION.md](evals/VALID
 ## Procedencia y mantenimiento
 
 Basado en `addyosmani/clarity`, commit `e27ceeff60368cf6966b4ea00a5b9b36418ee9a0`
-(skill 0.2.1). Esta adaptación usa 0.4.0. Conserva licencia MIT y copyright original en
+(skill 0.2.1). Esta adaptación usa 0.5.0. Conserva licencia MIT y copyright original en
 [LICENSE](LICENSE). No es una traducción oficial del autor.
 
 Los ejemplos son nuevos y didácticos; no se atribuyen a Addy Osmani. Se eliminan web,

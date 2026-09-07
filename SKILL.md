@@ -3,7 +3,7 @@ name: clarity
 description: "Reescribe, redacta y revisa textos o documentos en español con claridad, precisión y voz propia, sin inventar hechos. Úsala cuando pidan «reescríbelo con clarity», revisar un documento, mejorar un borrador o quitar prosa genérica. Admite entrevista, reescritura, revisión y diagnóstico; usa español de España por defecto y respeta otra variante solo si se pide expresamente."
 license: MIT
 metadata:
-  version: "0.4.0"
+  version: "0.5.0"
 ---
 
 # Clarity en español

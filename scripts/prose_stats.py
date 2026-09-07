@@ -19,57 +19,161 @@ from strip_markdown import strip
 
 
 # Léxicos de búsqueda, no listas de prohibiciones. Revisar siempre el contexto.
+# Están fechados: envejecen con la lengua y con las generaciones de modelos. Una
+# ausencia no es un aprobado y una coincidencia no es un defecto sin leer el pasaje.
 HEDGES = set('quizá quizás acaso posiblemente probablemente generalmente normalmente '
              'habitualmente frecuentemente aproximadamente aparentemente presuntamente '
-             'relativamente parcialmente podría podrían parece parecen sugiere sugieren '
-             'suele suelen casi algo bastante incierto incierta'.split())
+             'supuestamente relativamente parcialmente prácticamente mayormente '
+             'puede pueden podía podían podría podrían parece parecen sugiere sugieren '
+             'suele suelen casi ligeramente incierto incierta'.split())
 HEDGE_PHRASES = ['tal vez', 'puede que', 'es posible', 'en parte', 'en general',
-                'más o menos', 'creo que', 'a mi juicio', 'a veces', 'por lo general',
-                'hasta cierto punto', 'en la práctica', 'al menos', 'tiende a']
-BOOSTERS = set('crucial cruciales esencial esenciales vital vitales clave claves '
+                 'más o menos', 'creo que', 'diría que', 'a mi juicio', 'a veces',
+                 'a menudo', 'al parecer', 'por lo general', 'por lo común',
+                 'en ocasiones', 'en gran medida', 'en cierta medida', 'en cierto modo',
+                 'hasta cierto punto', 'en la práctica', 'en principio', 'más bien',
+                 'algo así como', 'una especie de', 'al menos en', 'tiende a', 'tienden a']
+BOOSTERS = set('crucial cruciales esencial esenciales vital vitales '
                'significativo significativa significativamente robusto robusta poderoso '
                'poderosa notable notablemente crítico crítica profundo profunda '
                'fundamental fundamentales imprescindible importante sustancial '
+               'convincente primordial decisivo decisiva innovador innovadora '
+               'inestimable rotundo rotunda indiscutible innegable extraordinario '
+               'extraordinaria sumamente enormemente increíblemente '
                'transformador transformadora revolucionario revolucionaria invaluable'.split())
-SIGNPOSTS = ['además', 'asimismo', 'también', 'por tanto', 'por consiguiente',
-             'en consecuencia', 'sin embargo', 'no obstante', 'en cambio',
-             'por el contrario', 'de hecho', 'mientras tanto', 'igualmente']
-CLOSERS = ['en conclusión', 'en resumen', 'para resumir', 'en definitiva',
-           'en pocas palabras', 'a fin de cuentas', 'al fin y al cabo', 'mirando al futuro']
-OPENER_PHRASES = ['en el mundo actual', 'en la era digital', 'cuando se trata de',
-                  'en esencia', 'cabe destacar', 'es importante señalar',
-                  'es importante destacar', 'en un mundo donde', 'la realidad es',
-                  'adentrémonos', 'sin más preámbulos', 'la verdad incómoda']
-LEXIS = ['sinergias', 'paradigma', 'ecosistema', 'poner en valor', 'hoja de ruta',
-         'en constante evolución', 'desempeña un papel crucial',
-         'desempeña un papel fundamental', 'arrojar luz', 'piedra angular',
-         'multifacético', 'multifacética', 'revolucionario', 'revolucionaria',
-         'marca un antes y un después', 'potenciar', 'fomentar', 'utilizar']
+BOOSTER_PHRASES = [re.compile(r'(?<!\w)sin fisuras(?!\w)', re.I)]
+# «clave» solo intensifica en uso adjetivo («papel clave», «es clave»). Con determinante
+# o preposición delante es el sustantivo («la clave de API», «referencia de claves»).
+NOMINAL_CUE = (r'el|la|los|las|un|una|unos|unas|su|sus|mi|mis|tu|tus|esa|esas|esta|estas|'
+               r'aquella|aquellas|nueva|nuevas|antigua|antiguas|misma|mismas|otra|otras|'
+               r'de|del|a|al|con|sin|en|por|para|sobre|tras|desde|hasta|entre')
+CLAVE_RE = re.compile(r'(?:\b(?P<nom>' + NOMINAL_CUE + r')\s+)?(?<!\w)claves?(?!\w)', re.I)
+SIGNPOSTS = ['además', 'asimismo', 'también', 'por tanto', 'por lo tanto',
+             'por consiguiente', 'en consecuencia', 'sin embargo', 'no obstante',
+             'en cambio', 'por el contrario', 'de hecho', 'mientras tanto',
+             'igualmente', 'de igual modo', 'de manera similar', 'del mismo modo',
+             'en última instancia', 'por último', 'así pues', 'por ello',
+             'de este modo', 'es más', 'en general', 'por su parte', 'ahora bien',
+             'dicho esto', 'en definitiva']
+CLOSERS = ['en conclusión', 'como conclusión', 'para concluir', 'en resumen',
+           'para resumir', 'en síntesis', 'en suma', 'en definitiva',
+           'en pocas palabras', 'a fin de cuentas', 'al fin y al cabo',
+           'en última instancia', 'en balance', 'mirando al futuro']
+OPENER_PHRASES = ['en el mundo actual', 'en la era digital', 'en el panorama actual',
+                  'cuando se trata de', 'en esencia', 'cabe destacar',
+                  'es importante señalar', 'es importante destacar',
+                  'es importante tener en cuenta', 'conviene tener en cuenta',
+                  'en un mundo donde', 'la realidad es', 'imagina por un momento',
+                  'adentrémonos', 'profundicemos', 'exploremos', 'vamos a explorar',
+                  'vamos a desglosarlo', 'en este artículo',
+                  'esto es lo que necesitas saber', 'permíteme explicarte',
+                  'déjame explicarte', 'seamos claros', 'que quede claro',
+                  'no es ningún secreto', 'sin más preámbulos', 'la verdad incómoda']
+LEXIS = ['sinergias', 'paradigma', 'ecosistema', 'poner en valor', 'poner de relieve',
+         'pone de relieve', 'hoja de ruta', 'en constante evolución',
+         'desempeña un papel crucial', 'desempeña un papel fundamental',
+         'desempeña un papel clave', 'arrojar luz', 'piedra angular',
+         'punto de inflexión', 'multifacético', 'multifacética', 'revolucionario',
+         'revolucionaria', 'marca un antes y un después', 'no es casualidad',
+         'de la mano', 'un sinfín de', 'una miríada de', 'panorama', 'entramado',
+         'intrincado', 'meticuloso', 'holístico', 'inmersión profunda', 'cautivar',
+         'profundizar', 'sumergirnos', 'sumergirse', 'subrayar', 'subraya',
+         'potenciar', 'empoderar', 'impulsar', 'aprovechar', 'abordar',
+         'fomentar', 'facilitar', 'utilizar']
 CONTRASTIVE = [re.compile(p, re.I) for p in [
     r'\ben lugar de\b', r'\bno necesariamente\b', r'\ba diferencia de\b',
-    r'\bno (?:solo|sólo|solamente|únicamente)\b[^.?!]{0,80}\bsino(?: también)?\b',
+    r'\bmás que\b[^.?!]{0,40}\bes\b',
+    r'\bno (?:solo|sólo|solamente|únicamente|simplemente|meramente)\b'
+    r'[^.?!]{0,80}\bsino(?: también)?\b',
     r'\bno es\b[^.?!]{0,60}[,;:]\s*(?:sino(?: que)? )?es\b',
     r'\bno se trata de\b[^.?!]{0,80}\bsino\b',
+    r'\bla (?:verdadera )?(?:pregunta|cuestión) no es\b',
 ]]
 COPULA = re.compile(r'\b(?:sirve como|se erige en|representa un|representa una|'
-                    r'marca un|se presenta como|constituye un|constituye una)\b', re.I)
+                    r'supone un|supone una|ofrece un|ofrece una|se convierte en|'
+                    r'presume de|marca un|se presenta como|constituye un|'
+                    r'constituye una)\b', re.I)
+# Sustantivos abstractos con verbos de agencia humana; concuerdan en número.
+FALSE_AGENCY_SING = (
+    r'(?:la (?:decisión|cultura|conversación|queja|industria|tecnología|arquitectura|'
+    r'organización|plataforma)|el (?:mercado|proceso|sistema|algoritmo|sector))\s+'
+    r'(?:decide|quiere|exige|habla|escucha|premia|recompensa|emerge|cambia|dice|'
+    r'impulsa|reclama|entiende|sabe|piensa|se mueve|se convierte)')
+FALSE_AGENCY_PLUR = (
+    r'(?:los (?:datos|resultados|números|algoritmos|procesos|sistemas)|'
+    r'las (?:cifras|métricas|tecnologías|organizaciones))\s+'
+    r'(?:hablan|deciden|exigen|quieren|premian|recompensan|emergen|cambian|dicen|'
+    r'impulsan|reclaman|entienden|saben|piensan|se mueven)')
 FALSE_AGENCY = re.compile(
-    r'\b(?:(?:la (?:decisión|cultura|conversación|industria|tecnología|arquitectura)|'
-    r'el (?:mercado|proceso))\s+(?:decide|quiere|exige|habla|escucha|premia)|'
-    r'los datos\s+(?:hablan|deciden|exigen|quieren))\b', re.I)
+    r'\b(?:' + FALSE_AGENCY_SING + r'|' + FALSE_AGENCY_PLUR + r')\b', re.I)
+PARTICIPIAL_HEADS = (
+    'construyendo', 'partiendo', 'basándose', 'basándonos', 'habiendo',
+    'considerando', 'aprovechando', 'combinando', 'reflejando', 'destacando',
+    'subrayando', 'usando', 'utilizando', 'añadiendo', 'sumando', 'reconociendo',
+    'admitiendo', 'entendiendo', 'comprendiendo', 'analizando', 'revisando',
+    'observando', 'mirando', 'buscando', 'sabiendo', 'asumiendo', 'atendiendo',
+    'siguiendo', 'empezando', 'comenzando', 'iniciando', 'pasando', 'tomando',
+    'volviendo', 'retomando', 'avanzando', 'explorando', 'profundizando',
+    'centrándose', 'centrándonos', 'enfocándose', 'dado', 'dada', 'dados', 'dadas',
+    'teniendo en cuenta')
+# Construcciones absolutas que ya cierran en coma: «Dicho esto, …».
+PARTICIPIAL_ABSOLUTE = ('dicho esto', 'dicho lo cual', 'aclarado esto', 'sentado esto')
+# «Dado que llovía» es una causal corriente, no una apertura de participio.
+# Las frases ya vienen segmentadas por párrafo, así que aquí un salto de línea es solo
+# ajuste de ancho: no debe impedir la coincidencia.
 PARTICIPIAL = re.compile(
-    r'^\s*(?:construyendo|partiendo|considerando|aprovechando|combinando|reflejando|'
-    r'destacando|subrayando|usando|añadiendo|reconociendo|entendiendo|teniendo en cuenta)'
-    r'\b[^,\n]{2,60},', re.I)
+    r'^\s*(?:(?:' + '|'.join(PARTICIPIAL_HEADS) + r')\b(?! que\b)[^,]{2,60}'
+    r'|(?:' + '|'.join(PARTICIPIAL_ABSOLUTE) + r'))\s*,', re.I)
 LETTER = r'[^\W\d_]'
 WORD_RE = re.compile(LETTER + r"+(?:['’\-]" + LETTER + r'+)*')
+# Espacio que admite un salto de línea suelto, no una línea en blanco: una enumeración
+# ajustada a 90 columnas sigue siendo la misma enumeración, pero no cruza párrafos.
+GAP = r'(?:[ \t]+|[ \t]*\n[ \t]*)'
 TRIAD = re.compile(
-    r'\b(' + LETTER + r'+(?:[ \t]+' + LETTER + r'+){0,2}),[ \t]+'
-    r'(' + LETTER + r'+(?:[ \t]+' + LETTER + r'+){0,2}),?[ \t]+'
-    r'(?:y|e|o|u)[ \t]+(' + LETTER + r'+(?:[ \t]+' + LETTER + r'+){0,2})\b', re.I)
-CHATBOT = ['espero que te sirva', 'espero que esto te ayude', 'si necesitas algo más',
-           'si tienes alguna pregunta', 'gran pregunta', 'tienes toda la razón',
-           'como modelo de lenguaje', 'según mi última actualización']
+    r'\b(' + LETTER + r'+(?:' + GAP + LETTER + r'+){0,2}),' + GAP +
+    r'(' + LETTER + r'+(?:' + GAP + LETTER + r'+){0,2}),?' + GAP +
+    r'(?:y|e|o|u)' + GAP + r'(' + LETTER + r'+(?:' + GAP + LETTER + r'+){0,2})\b', re.I)
+CHATBOT = ['espero que te sirva', 'espero que esto te ayude', 'espero haberte ayudado',
+           'si necesitas algo más', 'si tienes alguna pregunta', 'no dudes en preguntar',
+           'avísame si', 'te gustaría que', 'estaré encantado', 'estaré encantada',
+           'gran pregunta', 'excelente pregunta', 'tienes toda la razón',
+           '¡por supuesto!', '¡claro!', 'aquí tienes',
+           'como modelo de lenguaje', 'según mi última actualización',
+           'según la información disponible']
+# Coherencia dialectal. Solo formas inequívocas: «venís» y «decís» valen para vos y para
+# vosotros, así que quedan fuera. Encontrar ambas columnas en un texto es la señal; una
+# sola columna es una variante legítima, no un defecto.
+VOSEO_FORMS = ('sos', 'encontrás', 'tenés', 'querés', 'podés', 'sabés', 'hacés', 'ponés',
+               'salís', 'vivís', 'vení', 'mirá', 'avisá', 'tomá', 'dejá', 'andá', 'poné',
+               'esperá', 'contame', 'decime', 'fijate', 'acordate', 'quedate', 'sentate',
+               'avisame', 'mirame', 'escuchame', 'dejame', 'pensá', 'mandá', 'llevá',
+               'hablás', 'trabajás', 'usás', 'buscás', 'llamás', 'contás', 'comprás',
+               'pagás', 'cambiás', 'preguntás', 'validás', 'confirmás', 'revisás',
+               'necesitás', 'mandás', 'mirás', 'pensás', 'llevás', 'tomás', 'dejás')
+TUTEO_FORMS = ('eres', 'encuentras', 'tienes', 'quieres', 'puedes', 'sabes', 'haces',
+               'pones', 'sales', 'vives', 'ven', 'mira', 'avisa', 'toma', 'deja',
+               'espera', 'cuéntame', 'dime', 'fíjate', 'acuérdate', 'quédate',
+               'avísame', 'mírame', 'escúchame', 'déjame', 'piensa', 'manda', 'lleva',
+               'hablas', 'trabajas', 'usas', 'buscas', 'llamas', 'compras', 'pagas',
+               'cambias', 'preguntas', 'validas', 'confirmas', 'revisas', 'necesitas',
+               'confirmes', 'tengas', 'puedas', 'quieras', 'sepas', 'hagas', 'mires',
+               'avises', 'revises', 'mandes', 'valides', 'necesites')
+VOSEO_RE = re.compile(r'(?<!\w)(?:' + '|'.join(VOSEO_FORMS) + r')(?!\w)', re.I)
+TUTEO_RE = re.compile(r'(?<!\w)(?:' + '|'.join(TUTEO_FORMS) + r')(?!\w)', re.I)
+# Imperativo con enclítico: la palabra resultante es esdrújula y la tilde es obligatoria.
+# «avisame» es voseo si el texto es rioplatense y falta ortográfica si es es-ES.
+UNACCENTED_IMPERATIVES = ('avisame', 'avisanos', 'dejame', 'dejanos', 'mirame', 'miranos',
+                          'mandame', 'escribeme', 'cuentame', 'explicame', 'ayudame',
+                          'escuchame', 'permiteme', 'preguntame', 'llamame', 'esperame',
+                          'buscame', 'traeme', 'dimelo', 'damelo', 'hazmelo', 'digamelo',
+                          'devuelvemelo', 'mandamelo', 'pasamelo', 'cuentamelo')
+UNACCENTED_RE = re.compile(r'(?<!\w)(?:' + '|'.join(UNACCENTED_IMPERATIVES) + r')(?!\w)', re.I)
+# Gerundio especificativo: modifica a un sustantivo como si fuera adjetivo restrictivo
+# («una ley regulando el acceso»). La norma pide oración de relativo; solo «agua hirviendo»
+# y «clavo ardiendo» están lexicalizados. El gerundio de posterioridad no se detecta aquí:
+# distinguirlo exige semántica, y queda a cargo de references/edit.md.
+SPECIFYING_GERUND = re.compile(
+    r'\b(?:el|la|los|las|un|una|unos|unas)\s+[^\W\d_]+\s+'
+    r'(?!hirviendo|ardiendo)[^\W\d_]+(?:ando|iendo|yendo)\b', re.I)
 DASH_RE = re.compile(r'—|–|(?<=\s)--(?=\s)|(?<=\s)-(?=\s)')
 NUM_RE = re.compile(r'\b\d+(?:[.,]\d+)*\b')
 QUOTE_RE = re.compile(r'"[^"\n]{4,}"|“[^”\n]{4,}”|«[^»\n]{4,}»')
@@ -79,7 +183,10 @@ COMMON_CAPS = set('El La Los Las Un Una Unos Unas Yo Tú Vos Usted Ustedes Nosot
                   'Quién Cómo Dónde Después Antes Entonces Ahora'.split())
 BODY_MIN_WORDS = 8
 ABBREVIATION = re.compile(r'\b(?:sr|sra|srta|dr|dra|prof|profa|ud|uds|pág|págs|'
-                          r'art|arts|núm|aprox)\.$', re.I)
+                          r'art|arts|núm|aprox|etc|vol|cap|fig|ed)\.$', re.I)
+# Iniciales y siglas con punto interior («U.E.», «J. R. R.»): la letra anterior al
+# punto no va precedida de otra letra, así que ese punto no cierra la frase.
+INITIALS = re.compile(r'(?<![^\W\d_])' + LETTER + r'\.$')
 
 
 def sentences(text):
@@ -94,6 +201,8 @@ def sentences(text):
                 if pos and end < len(paragraph) and paragraph[pos-1].isdigit() and paragraph[end].isdigit():
                     continue
                 if end < len(paragraph) and ABBREVIATION.search(paragraph[start:end]):
+                    continue
+                if end < len(paragraph) and INITIALS.search(paragraph[start:end]):
                     continue
             # No separar dominios ni iniciales pegadas a otra palabra.
             if end < len(paragraph) and not paragraph[end].isspace() and paragraph[end] not in '¿¡':
@@ -140,8 +249,55 @@ def count_anchors(text, sents):
     return anchors
 
 
+def adjectival_clave(text):
+    """«clave» sin determinante delante: uso adjetivo, no el sustantivo."""
+    return [m.group() for m in CLAVE_RE.finditer(text) if not m.group('nom')]
+
+
+def dialect_forms(text):
+    voseo = sorted({m.group().lower() for m in VOSEO_RE.finditer(text)})
+    tuteo = sorted({m.group().lower() for m in TUTEO_RE.finditer(text)})
+    return voseo, tuteo
+
+
+def dialect_mix(text):
+    """Formas de voseo y de tuteo en el mismo texto: mezcla de paradigmas.
+
+    Devuelve lista vacía si el texto usa una sola variante, que es lo correcto.
+    """
+    voseo, tuteo = dialect_forms(text)
+    if not (voseo and tuteo):
+        return []
+    return [f"voseo: {', '.join(voseo)} / tuteo: {', '.join(tuteo)}"]
+
+
+def unaccented_imperatives(text):
+    """Imperativo con enclítico sin tilde donde la tilde es obligatoria.
+
+    En voseo coherente no lo es: «avisá» + «me» da «avisame», llana y sin tilde. Solo
+    se señala cuando el texto no es voseante, que es donde «avísame» es esdrújula.
+    """
+    voseo, tuteo = dialect_forms(text)
+    if voseo and not tuteo:
+        return []
+    return sorted({m.group().lower() for m in UNACCENTED_RE.finditer(text)})
+
+
+def count_boosters(text, lowered):
+    """Intensificadores léxicos más los que dependen del contexto sintáctico."""
+    return (sum(w in BOOSTERS for w in lowered)
+            + sum(len(rx.findall(text)) for rx in BOOSTER_PHRASES)
+            + len(adjectival_clave(text)))
+
+
+def has_booster(sentence):
+    low = {w.lower() for w in WORD_RE.findall(sentence)}
+    return (bool(low & BOOSTERS) or adjectival_clave(sentence)
+            or any(rx.search(sentence) for rx in BOOSTER_PHRASES))
+
+
 def analyze(text):
-    text = unicodedata.normalize('NFC', text).lstrip('\ufeff')
+    text = unicodedata.normalize('NFC', text).lstrip('﻿')
     sents, paras = sentences(text), paragraphs(text)
     words = WORD_RE.findall(text)
     n_words = len(words) or 1
@@ -151,11 +307,11 @@ def analyze(text):
     lowered = [w.lower() for w in words]
     n_hedge = sum(w in HEDGES for w in lowered)
     n_hedge += sum(len(phrase_pattern(p).findall(text)) for p in HEDGE_PHRASES)
-    n_boost = sum(w in BOOSTERS for w in lowered)
+    n_boost = count_boosters(text, lowered)
     co_occur, signposts, participials = [], [], []
     for s in sents:
         low = {w.lower() for w in WORD_RE.findall(s)}
-        if (low & HEDGES or phrase_hits(s, HEDGE_PHRASES)) and low & BOOSTERS:
+        if (low & HEDGES or phrase_hits(s, HEDGE_PHRASES)) and has_booster(s):
             co_occur.append(s[:110])
         if any(phrase_pattern(p).match(s.lstrip('¿¡«“"')) for p in SIGNPOSTS):
             signposts.append(s[:90])
@@ -195,6 +351,9 @@ def analyze(text):
             'stock_closers': phrase_hits(text, CLOSERS),
             'model_lexis': phrase_hits(text, LEXIS),
             'chatbot_residue': phrase_hits(text, CHATBOT),
+            'specifying_gerunds': regex_hits(text, [SPECIFYING_GERUND]),
+            'dialect_mix': dialect_mix(text),
+            'unaccented_imperatives': unaccented_imperatives(text),
         },
     }
 
@@ -220,6 +379,9 @@ LABELS = {
     'stock_closers': 'Cierres convencionales',
     'model_lexis': 'Léxico que conviene leer en contexto',
     'chatbot_residue': 'Posibles restos de conversación con un asistente',
+    'specifying_gerunds': 'Posible gerundio especificativo',
+    'dialect_mix': 'Mezcla de voseo y tuteo en el mismo texto',
+    'unaccented_imperatives': 'Imperativo con enclítico sin tilde',
 }
 
 
@@ -264,7 +426,7 @@ def main():
             stream.reconfigure(encoding='utf-8')
     try:
         if args.path == '-':
-            text = sys.stdin.read().lstrip('\ufeff')
+            text = sys.stdin.read().lstrip('﻿')
         else:
             with open(args.path, encoding='utf-8-sig') as fh:
                 text = fh.read()
