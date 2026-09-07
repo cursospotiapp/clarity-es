@@ -83,10 +83,53 @@ y escritura del formato: esta skill no incluye un conversor documental.
 Copia los que quieras a `~/.claude/commands/`. El instalador no los registra automáticamente
 como comandos independientes; no hacen falta para pedir «reescríbelo con clarity».
 
+## Un ejemplo
+
+Un correo que mezcla dos actos —un informe y una petición con plazo— en una sola frase de
+58 palabras, y que alterna voseo con tuteo. Los datos son ficticios.
+
+> Hola: el informe trimestral ya está cerrado y los números de octubre subieron un 4,2 %
+> frente a septiembre, aunque el dato de Andalucía todavía está pendiente de consolidar y
+> podría moverse, y necesito que me confirmes antes del jueves a las 12:00 si validás la
+> cifra de Andalucía o preferís que la marquemos como provisional en la presentación del
+> comité.
+
+Tras aplicar la skill en modo reescritura:
+
+> Hola:
+>
+> El informe trimestral ya está cerrado: los números de octubre subieron un 4,2 % frente a
+> septiembre. El dato de Andalucía sigue pendiente de consolidar y podría moverse.
+>
+> Necesito que me confirmes antes del jueves a las 12:00 si validas la cifra de Andalucía o
+> si prefieres que la marquemos como provisional en la presentación del comité.
+
+Qué cambia y qué no:
+
+- Informe y petición van en párrafos distintos, con la petición al frente del suyo.
+- «validás» y «preferís» pasan a «validas» y «prefieres». Sin petición de variante, es-ES.
+- Sobreviven el 4,2 %, octubre, septiembre, Andalucía, el jueves a las 12:00 y el comité.
+- «podría moverse» se queda: es la incertidumbre real del dato, no una muletilla.
+- El saludo se conserva. Un correo sigue siendo un correo.
+
+### Cuándo no cambia nada
+
+Aquí se separa de pedirle a un modelo «resúmelo y ve al grano». Ante este fragmento de
+artículo académico, la respuesta correcta es no editarlo:
+
+> Los resultados sugieren una asociación entre la exposición prolongada y el descenso de
+> rendimiento (r = 0,31; p = 0,04; n = 148). No obstante, el diseño transversal impide
+> inferir causalidad, y la muestra procede de una única cohorte universitaria.
+
+«Sugieren» es el verbo exacto para r = 0,31, y las tres limitaciones son las que el dato
+exige. Cambiarlo por «demuestran» o recortar las cautelas daría un texto más rotundo y menos
+cierto. En el corpus de prueba, cuatro de catorce textos pedían esa respuesta: articulado
+jurídico, guía operativa, prosa literaria y este.
+
 ## Adaptación
 
 - Instrucciones, guías, comandos, ejemplos y casos de evaluación en español.
-- Conserva variante, tuteo, ustedeo o voseo; no fuerza español de un país.
+- Usa español de España por defecto (tuteo, «vosotros» plural, tildes imperativas); conserva voseo u otra variante solo si se pide expresamente, con coherencia completa.
 - Respeta sujeto omitido, pasivas útiles, gerundios precisos y conectores justificados.
 - Analiza tildes, ñ, Unicode normalizado, comillas angulares, decimales y léxicos españoles.
 - Mantiene cuatro modos, fidelidad factual, límites de autoría y claves JSON del original.
@@ -126,7 +169,7 @@ Las comprobaciones realizadas se documentan en [evals/VALIDATION.md](evals/VALID
 ## Procedencia y mantenimiento
 
 Basado en `addyosmani/clarity`, commit `e27ceeff60368cf6966b4ea00a5b9b36418ee9a0`
-(skill 0.2.1). Esta adaptación usa 0.3.0. Conserva licencia MIT y copyright original en
+(skill 0.2.1). Esta adaptación usa 0.5.0. Conserva licencia MIT y copyright original en
 [LICENSE](LICENSE). No es una traducción oficial del autor.
 
 Los ejemplos son nuevos y didácticos; no se atribuyen a Addy Osmani. Se eliminan web,

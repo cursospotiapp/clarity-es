@@ -88,15 +88,31 @@ Revisa negritas innecesarias, viñetas siempre etiquetadas en negrita, emojis de
 mayúsculas inglesas en títulos y encabezados repetidos en la primera frase. Conserva formato
 que facilite consulta, accesibilidad o cumplimiento del encargo.
 
-### Español natural
+### Español de España por defecto
 
-Conserva tratamiento y variedad del autor, incluidos voseo y léxico regional. Evita calcos
-que dificulten entender, sin corregir una variante legítima por ser distinta. No impongas
-frases cortas en serie: una subordinada bien construida puede explicar mejor una condición.
-Revisa gerundios si confunden secuencia o sujeto, no por terminar en -ando/-iendo. No elimines
-adverbios en -mente que delimiten una afirmación. Respeta ¿?, ¡!, comillas, rayas de diálogo
-y puntuación española; no apliques reglas de contracciones inglesas. No cambies separadores
-decimales, unidades o fechas de forma ambigua.
+Usa es-ES salvo petición expresa de otra variante o destino que la exija. Normaliza con
+coherencia completa: «tú encuentras / avísame / dime», no «encontrás / avisame»; «vosotros»
+para plural informal cuando proceda; léxico peninsular. No mezcles paradigmas en el mismo
+texto. El voseo coherente («Si encontrás, avisame») es legítimo solo si se pidió; sin ese
+pedido es fallo dialectal. Evita calcos que dificulten entender, sin corregir una variante
+pedida por ser distinta. No impongas frases cortas en serie: una subordinada bien construida
+puede explicar mejor una condición. No elimines adverbios en -mente que delimiten una afirmación.
+Respeta ¿?, ¡!, comillas, rayas de diálogo y puntuación española; no apliques reglas de
+contracciones inglesas. No cambies separadores decimales, unidades o fechas de forma ambigua.
+Separa actos distintos (informe frente a petición con plazo) en párrafos propios y resuelve
+la doble cobertura («sugiere… podría ser aproximadamente») sin reforzar la afirmación.
+
+### Gerundio: qué corregir y qué no
+
+Terminar en -ando/-iendo no es un defecto: el gerundio expresa bien simultaneidad,
+anterioridad inmediata, modo, causa o condición. Corrige solo los tres usos que la norma
+rechaza. **De posterioridad:** «Estudió en Madrid, yendo después a Buenos Aires»; la acción
+es posterior, no simultánea, así que conviene coordinar o subordinar. **Especificativo**,
+el que modifica a un sustantivo como adjetivo restrictivo: «una ley reformando las tarifas»
+→ «que reforma las tarifas»; solo «agua hirviendo» y «clavo ardiendo» están lexicalizados.
+**Sin sujeto recuperable:** el gerundio cuyo agente no es el de la oración principal ni forma
+construcción absoluta deja la acción sin quién. Una apertura con gerundio bien construida no
+sobra; una cadena de ellas sí uniforma el ritmo y merece variarse.
 
 ## Conservar el material del autor
 
@@ -112,7 +128,10 @@ precisa vale más que color inventado.
 
 Compara con la fuente: mismo contenido factual, cifras, citas, atribución, condiciones y
 enlaces; ninguna experiencia, preferencia, métrica ni causa nueva. Las eliminaciones deben
-respetar el alcance pedido, sin perder matices esenciales. Comprueba que no reproduces el
-patrón criticado con otra puntuación; que guías, avisos, mensajes y referencias funcionan;
-que has conservado las frases fuertes; y que el cierre acaba en la última idea útil.
-Corrige el fallo material una vez y termina, sin uniformar todas las frases.
+respetar el alcance pedido, sin perder matices esenciales. Comprueba coherencia dialectal
+es-ES (o variante pedida), tildes imperativas y que actos distintos van separados.
+Comprueba que no reproduces el patrón criticado con otra puntuación; que guías, avisos,
+mensajes y referencias funcionan; que has conservado las frases fuertes; y que el cierre
+acaba en la última idea útil. Una salida casi-verbatim que solo quita una muletilla es
+intervención insuficiente: debe resolver el problema principal. Corrige el fallo material
+una vez y termina, sin uniformar todas las frases.
