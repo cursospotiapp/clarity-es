@@ -1,4 +1,18 @@
-# Clarity en español
+<div align="center">
+
+# **Clarity en español**
+
+### *Una skill para reescribir textos con claridad, precisión y voz propia*
+
+[![Agent Skill](https://img.shields.io/badge/Agent_Skill-clarity-6BA539?style=flat-square)](SKILL.md)
+[![Español](https://img.shields.io/badge/Idioma-Espa%C3%B1ol-E9B44C?style=flat-square)](#adaptación)
+[![Agentes](https://img.shields.io/badge/Agentes-OpenCode%20%C2%B7%20Claude%20Code%20%C2%B7%20Codex-000000?style=flat-square)](#instalar)
+[![Tests](https://img.shields.io/github/actions/workflow/status/cursospotiapp/clarity-es/validate.yml?branch=main&style=flat-square&label=Tests&logo=githubactions&logoColor=white)](https://github.com/cursospotiapp/clarity-es/actions/workflows/validate.yml)
+[![Licencia](https://img.shields.io/badge/Licencia-MIT-blue?style=flat-square)](LICENSE)
+
+</div>
+
+---
 
 Reescribe textos y documentos en español con precisión, claridad y voz propia. Conserva
 hechos, cifras, matices y estilo del autor; pregunta o señala las lagunas en vez de inventar.
