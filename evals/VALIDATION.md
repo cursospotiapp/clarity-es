@@ -12,6 +12,9 @@ Fecha: 7 de septiembre de 2026. Entorno local: Windows, Python 3.11, skills 1.5.
 - Instalación local con `--skill clarity -a opencode claude-code codex --copy -y` en un
   directorio temporal: completada; referencias y scripts presentes.
 - `pnpm dlx skills add C:\Proyectos\clarity-es --list`: descubre `clarity`.
+- Tras publicar el fork, `npx skills add cursospotiapp/clarity-es --list` y la instalación
+  desde GitHub con `--skill clarity -a opencode claude-code codex --copy -y` completadas
+  en el mismo directorio temporal.
 - Revisión independiente de instrucciones, referencias y scripts: sin defectos materiales.
 
 ## Prueba puntual de reescritura
