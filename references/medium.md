@@ -1,45 +1,31 @@
-# Medium routing
+# Criterios según el medio
 
-Read only the row relevant to the task. Explicit user requirements and binding house or venue
-rules outrank these defaults.
+Lee la fila pertinente. Las peticiones explícitas y normas obligatorias del destinatario
+tienen prioridad sobre estas preferencias.
 
-| Medium | Optimize for | Preserve | Avoid |
+| Medio | Prioridad | Conservar | Evitar |
 |---|---|---|---|
-| Essay, article, newsletter | Development, authorial judgment, examples, readable momentum | Voice, uncertainty, earned digressions | A comprehensive survey when one through-line will do |
-| Documentation, guide | Correct completion, scanning, prerequisites, examples, failure states | Headings, lists, code, warnings, exact terms | Restructuring for novelty or hiding conditions in prose |
-| Reference, API, policy | Retrieval, precision, consistency | Repeated schemas, definitions, tables, normative language | Anti-template edits that make entries inconsistent |
-| Academic paper | Claim-evidence fit, venue conventions, calibrated verbs | Citations, numbers, equations, `we`, evidence-bound hedging, useful passive voice | Casualizing, invented evidence, or removing qualification for punch |
-| Legal, medical, safety | Accuracy, scope, traceable authority, risk communication | Required notices, definitions, uncertainty, escalation paths | Voice experiments or brevity that drops protections |
-| Marketing, launch copy | A specific audience, demonstrated value, credible proof | Product names, constraints, calls to action, required claims | Unsupported superlatives, generic excitement, fabricated customers or metrics |
-| Email, memo, Slack | The request, decision, update, owner, and next action | Social context, salutations where expected, useful bullets | Turning a short message into an essay or inserting fake casual mess |
-| UI text | Task completion, brevity, accessibility, consistent terminology | Labels, error recovery, localization constraints | Personality that obscures the action or changes product semantics |
-| Speech, talk, slides | Listening comprehension, oral rhythm, memorable evidence | Repetition that helps an audience follow, stage directions when requested | Applying page-prose density or removing every rhetorical beat |
-| Fiction, narrative | Perspective, causality, scene, character choice, genre expectations | Deliberate ambiguity, voice, nonlinear structure when earned | Adding disorder or open threads solely to evade a model pattern |
+| Ensayo, artículo, boletín | Desarrollo, criterio propio, ejemplos, ritmo | Voz, dudas, digresiones justificadas | Panorama exhaustivo cuando basta un hilo |
+| Documentación, guía | Pasos correctos, consulta, requisitos, fallos | Encabezados, listas, código, avisos, términos exactos | Novedad estructural que oculta condiciones |
+| Referencia, API, política | Precisión y consulta consistente | Esquemas repetidos, definiciones, tablas, lenguaje normativo | Variaciones que vuelven inconsistentes las entradas |
+| Artículo académico | Correspondencia entre afirmación y evidencia | Citas, cifras, ecuaciones, matices, pasiva útil, «nosotros» | Informalidad impuesta, evidencia inventada, contundencia falsa |
+| Jurídico, médico, seguridad | Exactitud, alcance, autoridad trazable, riesgos | Avisos, definiciones, incertidumbre, vías de consulta | Brevedad que elimina protecciones |
+| Publicidad, lanzamiento | Público concreto, valor demostrado | Marcas, límites, llamadas a la acción, menciones obligatorias | Superlativos, clientes o métricas inventados |
+| Correo, nota, chat | Petición, decisión, responsable, siguiente paso | Contexto social, saludos esperados, viñetas útiles | Convertir un mensaje breve en ensayo o forzar informalidad |
+| Interfaz | Acción comprensible, brevedad, accesibilidad | Etiquetas, recuperación de errores, límites de traducción | Personalidad que cambia la función del producto |
+| Discurso, charla, diapositivas | Comprensión oral y evidencia recordable | Repetición orientadora, indicaciones escénicas solicitadas | Densidad de página o eliminar todo recurso retórico |
+| Ficción, relato | Perspectiva, causalidad, escena, personajes | Ambigüedad deliberada, voz, estructura no lineal justificada | Desorden introducido para evitar patrones |
 
-## Medium-specific checks
+## Comprobaciones específicas
 
-### Documentation and reference
-
-Predictability is a feature. Keep repeated entry structures, numbered procedures, tables, and
-explicit transitions when they help retrieval or prevent mistakes. Test whether a reader can
-complete the task, not whether each paragraph looks different.
-
-### Academic and high-stakes prose
-
-Never invent or alter evidence. `Suggests`, `is consistent with`, and `may indicate` can be the
-most accurate verbs. Flag an unsupported claim for the author instead of manufacturing a figure,
-citation, sample size, or stronger conclusion.
-
-For current legal, medical, policy, grant, or venue requirements, consult the governing source;
-this writing skill is not authority for changing them.
-
-### Messages
-
-Lead with the concrete request, decision, or update when the relationship permits it. Preserve
-real politeness. Cut service-desk filler, but do not make a sensitive message artificially blunt.
-
-### Authored long-form and narrative
-
-This is where Clarity's authorship questions matter most. Look for supplied experience,
-judgment, images, and boundaries. Structural asymmetry should follow importance or events, not a
-rule that “human writing must be messy.”
+En documentación y referencia, la previsibilidad ayuda: conserva entradas uniformes,
+procedimientos numerados, tablas y transiciones que eviten errores. Comprueba si el lector
+puede completar la tarea, no si cada párrafo tiene una forma distinta.
+En textos académicos o de consecuencias importantes, nunca inventes ni alteres evidencia.
+«Sugiere», «es compatible con» y «podría indicar» pueden ser los verbos más precisos. Señala
+falta de respaldo en vez de fabricar cifras, citas, muestras o conclusiones. Para requisitos
+vigentes jurídicos, médicos o editoriales, consulta su fuente: esta skill no autoriza a cambiarlos.
+En mensajes, empieza por petición, decisión o novedad cuando la relación lo permita. Conserva
+cortesía real, tratamiento y plazos. No hagas brusco un mensaje delicado.
+En prosa extensa, usa `longform.md`: desarrolla la idea y preserva imágenes, postura, calidez
+y ritmo respaldados, sin imponerlos a otros medios.

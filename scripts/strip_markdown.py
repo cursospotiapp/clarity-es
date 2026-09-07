@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 """
-strip_markdown.py — reduce a markdown draft to the prose a reader actually reads.
+strip_markdown.py — extrae la prosa visible de un borrador Markdown.
 
-Removes YAML frontmatter, fenced and inline code, images, HTML comments, tables,
-heading markers, list markers, blockquote markers, and emphasis marks. Link text
-is kept and the URL dropped, since the reader reads the text.
+Elimina frontmatter YAML, bloques de código, imágenes, comentarios HTML, tablas y
+marcas de títulos, listas, citas y énfasis. Conserva el texto de los enlaces y del
+código en línea; descarta los destinos de los enlaces. Es una extracción heurística,
+no un parser Markdown completo. No modifica el archivo fuente.
 
-Usage:
+Uso:
     python3 strip_markdown.py draft.md > draft.txt
     python3 strip_markdown.py draft.md | python3 prose_stats.py -
 """
@@ -16,6 +17,7 @@ import sys
 
 
 def strip(text):
+    text = text.lstrip('\ufeff').replace('\r\n', '\n')
     # YAML frontmatter
     text = re.sub(r"\A---\n.*?\n---\n", "", text, flags=re.S)
     # HTML comments
@@ -56,10 +58,13 @@ def strip(text):
 
 
 def main():
+    for stream in (sys.stdin, sys.stdout):
+        if hasattr(stream, 'reconfigure'):
+            stream.reconfigure(encoding='utf-8')
     if len(sys.argv) < 2 or sys.argv[1] == "-":
         text = sys.stdin.read()
     else:
-        with open(sys.argv[1], encoding="utf-8") as fh:
+        with open(sys.argv[1], encoding="utf-8-sig") as fh:
             text = fh.read()
     sys.stdout.write(strip(text))
 

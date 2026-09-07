@@ -1,13 +1,15 @@
-# Sample provenance
+# Procedencia de los ejemplos
 
-These samples demonstrate different workflows. They are examples, not detector benchmarks.
+Material didáctico ficticio creado durante la adaptación al español. No documenta mediciones
+ni vivencias reales de Addy Osmani o del propietario del repositorio. Los datos de cada entrada
+se tratan como fuente dentro del ejercicio.
 
-| Pair | Workflow | Provenance and limits |
-|---|---|---|
-| `how-ai-works.before.md` → `how-ai-works.after.md` | Fact-preserving rewrite | The rewrite uses only claims present in the source. Where the source lacks support, it narrows or states the limit instead of adding researched-sounding detail. |
-| `what-it-means-to-be-human.before.md` → `what-it-means-to-be-human.after.md` | Fact-preserving rewrite | The rewrite changes structure and language without adding anatomy, quotations, dates, studies, or historical examples absent from the source. |
-| `what-it-means-to-be-human.transcript.txt` → `what-it-means-to-be-human.after-interview.md` | Co-write from an interview | The draft is built from Addy's supplied language. It intentionally preserves some repetition and conversational phrasing. It demonstrates provenance, not a claim that every sentence is maximally polished. |
+| Entrada y salida | Qué muestra |
+|---|---|
+| `actualizacion.before.md` → `actualizacion.after.md` | Recorta énfasis conservando atribución, muestra, cifras, incertidumbre y alcance |
+| `guia.before.md` → `guia.after.md` | Conserva pasos, aviso, código y enlace |
+| `entrevista.transcript.txt` → `entrevista.after.md` | Construye desde respuestas explícitas sin añadir recuerdos |
 
-The PNG files record an exploratory detector check from the earlier project. They do not establish
-authorship, writing quality, or a general performance claim, and the runtime skill does not optimize
-for them.
+La entrevista es simulada. El modelo organiza y comprime las respuestas; no añade investigación
+ni deja preguntas pendientes. Son ejemplos de comportamiento esperado, no resultados de pruebas
+con agentes ni benchmarks. Los ejemplos ingleses originales siguen en el historial Git.

@@ -25,10 +25,12 @@ REQUIRED_FILES = RUNTIME_FILES + [
     ROOT / "evals" / "cases.json",
     ROOT / "evals" / "JUDGE.md",
     ROOT / "samples" / "README.md",
-    ROOT / "samples" / "how-ai-works.before.md",
-    ROOT / "samples" / "how-ai-works.after.md",
-    ROOT / "samples" / "what-it-means-to-be-human.before.md",
-    ROOT / "samples" / "what-it-means-to-be-human.after.md",
+    ROOT / "samples" / "actualizacion.before.md",
+    ROOT / "samples" / "actualizacion.after.md",
+    ROOT / "samples" / "guia.before.md",
+    ROOT / "samples" / "guia.after.md",
+    ROOT / "samples" / "entrevista.transcript.txt",
+    ROOT / "samples" / "entrevista.after.md",
 ]
 RETIRED_REFERENCES = {
     "references/calibration.md",

@@ -1,59 +1,53 @@
-# Review format
+# Formato de revisión
 
-Review the piece the user supplied. Do not create a replacement draft or change files unless
-asked. Lead with the largest material issue; line edits come second.
+Revisa el texto aportado. No crees otro borrador ni modifiques archivos sin petición expresa.
+Empieza por el problema material más importante; después vienen los detalles de frase.
 
-## Piece-level diagnosis
+## Diagnóstico del conjunto
 
-Use these fields when relevant, omitting fields that would add ceremony rather than information:
-
-```txt
-Job:          the medium, reader, and intended outcome
-Substance:    what the piece specifically contributes, or what is missing
-Trust:        factual support, attribution, uncertainty, and any preservation risk
-Development:  how the material progresses and where it becomes list-like or repetitive
-Voice:        what reads as the author's and where generic model register takes over
-Ending:       whether it stops on the last useful thought
-Top fixes:    the two or three changes with the largest expected gain, ranked
-```
-
-For reference, procedural, academic, legal, or message-oriented prose, do not demand an
-authorial thesis. Evaluate whether the text performs its actual job.
-
-If the substance is too thin to support a useful rewrite, say so plainly and offer the
-interview. Continue with requested line feedback, but explain that surface edits cannot supply
-missing evidence or experience.
-
-## Passage-level finding
-
-Use one block per material issue:
+Usa solo los campos que aporten información:
 
 ```txt
-Passage:      the shortest quote that locates the issue
-Verdict:      keep / revise / ask-author / cut
-Pattern:      a concise name from edit.md
-Why:          what the passage does instead of its intended job
-Suggestion:   a supported replacement, a precise author question, or the reason to cut
-Safety check: whether the suggestion preserves facts, attribution, scope, and voice
+Función:      medio, lector y resultado esperado
+Sustancia:    aportación concreta o material que falta
+Fiabilidad:   respaldo, atribución, incertidumbre y riesgos de alterar el sentido
+Desarrollo:   progresión y puntos repetitivos o desconectados
+Voz:          rasgos propios y prosa genérica que los desplaza
+Cierre:       si termina en la última idea útil
+Prioridades:  dos o tres cambios de mayor utilidad, por orden
 ```
 
-Verdicts:
+Una referencia, procedimiento, artículo académico, texto jurídico o mensaje no necesita tesis
+personal. Evalúa su función. Si falta sustancia para una reescritura útil, dilo y ofrece la
+entrevista. Continúa con los comentarios solicitados, aclarando que el estilo no aporta
+evidencia ni experiencia ausentes.
 
-- `keep`: a pattern is present but earned, required by the medium, or preferable to the
-  proposed alternatives. State what earns it.
-- `revise`: the source already contains enough material for an honest improvement.
-- `ask-author`: improvement needs a fact, mechanism, example, opinion, or experience the source
-  does not supply. Ask exactly for that information and offer a cut or plain fallback.
-- `cut`: the passage adds only repetition, ceremony, unsupported emphasis, or closure.
+## Hallazgos por pasaje
 
-Do not invent the missing material in a suggested rewrite. Check your own replacement for the
-same formula, inflated claim, meaning drift, or fabricated detail you identified in the source.
+Un bloque por problema material:
 
-## Review discipline
+```txt
+Pasaje:       cita mínima para localizarlo
+Dictamen:     conservar / revisar / preguntar al autor / eliminar
+Patrón:       nombre preciso de edit.md
+Motivo:       qué hace el pasaje y qué debería conseguir
+Sugerencia:   alternativa respaldada, pregunta precisa o motivo para recortar
+Fidelidad:    si conserva hechos, atribución, alcance y voz
+```
 
-- Distinguish errors from likely improvements and both from taste.
-- Quote the previous sentence when context determines whether a contrast, adjective, passive,
-  list, or closing beat is earned.
-- Prefer a few high-impact findings to an exhaustive word watchlist.
-- Report no finding when the prose already performs its job.
-- Do not use a detector verdict as evidence that a passage is good, bad, human, or generated.
+- **Conservar** (`keep`): recurso justificado, requerido por el medio o preferible a las
+  alternativas. Explica qué lo justifica.
+- **Revisar** (`revise`): hay material suficiente para mejorar con fidelidad.
+- **Preguntar al autor** (`ask-author`): falta hecho, mecanismo, ejemplo, opinión o vivencia.
+  Pregunta por eso y ofrece formulación sencilla o recorte como alternativa.
+- **Eliminar** (`cut`): solo aporta repetición, ceremonia, énfasis sin respaldo o cierre vacío.
+
+No inventes material en sugerencias. Comprueba que tu alternativa no repite fórmula, inflación
+o cambio de sentido que señalas. Una sugerencia puntual no autoriza a reescribir el documento.
+
+## Disciplina
+
+Distingue errores, mejoras probables y gustos. Cita la frase anterior si el contexto decide
+si contraste, adjetivo, pasiva, lista o remate están justificados. Prefiere pocos hallazgos
+útiles a una lista exhaustiva de palabras. Si cumple su función, dilo sin inventar defectos.
+Un detector no demuestra calidad, autoría ni generación automática.

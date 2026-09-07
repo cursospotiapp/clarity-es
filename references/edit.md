@@ -1,158 +1,118 @@
-# Editing guide
+# Guía de edición
 
-Use this for rewrites and as the pattern reference during reviews. Read the passage before
-classifying a pattern. A familiar construction is not a defect when the surrounding prose earns
-it or the medium requires it.
+Úsala al reescribir y como referencia de patrones al revisar. Lee el pasaje antes de
+clasificarlo: una construcción habitual puede estar justificada por el contexto o el medio.
 
-## Order of work
+## Orden de trabajo
 
-Fix problems in this order:
+1. **Verdad y alcance:** protege afirmaciones, atribución, incertidumbre, ejemplos, citas,
+   enlaces, condiciones, anonimización y estructura obligatoria.
+2. **Sustancia:** identifica el resultado o idea real. En prosa extensa, localiza el material
+   propio del autor. Si falta, pregunta o explica el límite.
+3. **Desarrollo:** enlaza párrafos mediante causa, contraste, secuencia, matiz, ejemplo o
+   consecuencia. Reestructura solo dentro de lo solicitado.
+4. **Frases:** reduce inflación, repetición y fórmulas preservando voz y convenciones del medio.
+5. **Expresión:** recupera concreción, postura, calidez y ritmo si la edición los borró.
 
-1. **Truth and scope.** Inventory claims, attribution, uncertainty, examples, citations, links,
-   conditions, quotations, redactions, and required structure. These are protected.
-2. **Substance.** Identify the real outcome or point. In authored long-form work, find the
-   source material only this author supplied. If it is absent, ask or label the limitation.
-3. **Development.** Make paragraphs depend on one another through cause, contrast, sequence,
-   qualification, example, or consequence. Restructure only as much as the request permits.
-4. **Sentences.** Remove inflated, repetitive, or formulaic machinery while preserving useful
-   voice and medium conventions.
-5. **Craft.** Restore concrete material, stance, warmth, or rhythm if editing made the piece
-   colder or flatter.
+## Diagnósticos que más aportan
 
-## High-value diagnoses
+### Importancia sin mecanismo
 
-### Importance without mechanism
+«Crucial», «transformador», «marca un antes y un después», «pone de relieve la importancia»
+o «desempeña un papel fundamental» pueden declarar magnitud sin explicar qué ocurre.
+Quita mentalmente el énfasis: ¿queda un actor, mecanismo, resultado o límite? Expresa el
+mecanismo respaldado y deja que el lector juzgue su importancia. Conserva «robusto» si se
+explica cómo se toleran fallos; «un enfoque robusto» sin explicación aporta poco.
 
-The sentence claims magnitude instead of showing what happens.
+### Vaguedad que parece concreta
 
-```txt
-Watch: pivotal, crucial, transformative, underscores the importance, represents a shift,
-       testament to, broader trend, plays a key role
-Test:  remove the emphasis. Does the remaining claim name an actor, mechanism, result, or limit?
-Fix:   state the supported mechanism and let the reader judge its importance.
-```
+«Una dependencia provocó un problema de seguridad» tiene forma de ejemplo, pero faltan la
+dependencia, el incidente y cómo se detectó. Si no están en la fuente, pregunta, marca `[TK]`
+o elimina el ejemplo si el encargo lo permite. Nunca rellenes la laguna por tu cuenta.
+Nombres, fechas y citas permiten verificar; las imágenes permiten imaginar. Usa la concreción
+que necesite el registro, sin añadir datos decorativos para aumentar una métrica.
 
-Keep an evaluative word when the same passage supplies the evidence that earns it. `Robust`
-belongs in an engineering sentence that names the failure handling; it does not belong in
-`a robust approach` with no mechanism.
+### Atribución vaga y precisión falsa
 
-### Specific-looking vagueness
+Ante «los expertos afirman», «los estudios demuestran» o «el sector considera», identifica la
+fuente aportada, conserva la incertidumbre, pregunta por el respaldo o propone recortar.
+No conviertas asociación en causalidad, «podría» en «va a», «algunos» en «la mayoría» ni una
+afirmación comercial en un hecho del narrador. Más contundente no siempre es más claro.
 
-An anecdote can have the grammar of an example and the content of an abstraction: “a package
-once caused a security problem.” Ask which package, what happened, and how it was caught. If the
-source does not contain the answer, use `[TK]` or cut the anecdote. Never fill the gap yourself.
+### Fórmulas que sustituyen el razonamiento
 
-Dates, names, and citations make claims verifiable. Images make a reader present. Use the kind
-of concreteness the register needs; do not add decorative facts to satisfy a density target.
+Observa repetición de «no es X, es Y», enumeraciones de tres, frases sentenciosas, preguntas
+fingidas y párrafos de afirmación-explicación-remate. Aplica dos pruebas:
 
-### Vague attribution and false precision
+1. Expresa la afirmación sin su cadencia. Si no queda nada concreto, faltaba razonamiento.
+2. Explicita la relación con «porque», «aunque», «cuando», «si» o «por eso». Si necesitas
+   inventarla, el original solo sugería una conexión.
 
-```txt
-Watch: experts argue, studies show, observers note, industry reports suggest
-Fix:   name the supplied source, preserve explicit uncertainty, ask for it, or cut the claim.
-```
+Conserva contrastes justificados, listas concretas, frases breves y remates ganados. Corrige
+el uso repetitivo o vacío, no el recurso por existir. «No solo… sino también» puede precisar
+un alcance real; no lo elimines automáticamente.
 
-Do not convert association into causation, `may` into `will`, `some` into `most`, or a vendor's
-claim into narrator fact. A more confident sentence is not automatically a clearer one.
+### Actores abstractos y sujetos omitidos
 
-### Formula carrying the argument
+«La cultura decide» o «los datos exigen» pueden ocultar quién interpreta o actúa. Nombra a
+la persona, equipo, sistema o proceso documentado cuando aclare la acción. No sustituyas
+una abstracción por un actor inventado. «Revisamos los registros» ya expresa quién actúa;
+no necesita «nosotros». La pasiva y las construcciones con «se» son adecuadas si el actor se
+desconoce, es irrelevante, está protegido o importa menos que el objeto.
 
-Common forms include `not X but Y`, balanced threes, repeated short punchlines, fake questions,
-and topic-sentence/explanation/zinger paragraphs.
+### Regularidad estructural
 
-Run two tests:
+Busca el patrón dominante: secciones iguales, párrafos intercambiables, encabezados que hacen
+todo el trabajo, explicación tras cada ejemplo, remates en todos los párrafos o conclusión
+que repite y promete un futuro mejor. Resuelve el problema principal: mueve o combina material,
+da más espacio a lo necesario, explicita una conexión o termina en la consecuencia concreta.
+No añadas desorden, digresiones ni hilos abiertos para aparentar irregularidad.
 
-1. **Flatten test:** state the claim without the cadence. If nothing specific remains, the
-   formula was doing the missing reasoning's work.
-2. **Relation test:** restate the implied connection using `because`, `although`, `when`, `if`,
-   `which`, or `so`. If doing so requires inventing a relation, the original only suggested one.
+### Residuos superficiales
 
-Keep an earned contrast, concrete three-item list, short sentence, fragment, or memorable line.
-Change repeated use or unsupported performance, not the device itself.
+Estas expresiones sirven para buscar, no están prohibidas:
 
-### Abstract actors
+| Patrón | Ejemplos que conviene leer en contexto |
+|---|---|
+| Envoltura de asistente | «¡Gran pregunta!», «Aquí tienes…», «Espero que te sirva», «Si necesitas algo más…» |
+| Narración del propio texto | «Adentrémonos», «En esta sección», «Como veremos», «Sin más preámbulos» |
+| Énfasis vacío | «Cabe destacar», «Es importante señalar», «La verdadera pregunta es» |
+| Prestigio sin contenido | «revolucionario», «ecosistema», «sinergias», «paradigma», «potenciar» |
+| Colas decorativas | «destacando…», «subrayando…», «fomentando…», «reflejando…» |
+| Cierre genérico | «En conclusión», «En definitiva», «Mirando al futuro» |
 
-Decisions do not decide and data does not speak. Name the person, team, system, or documented
-process when that makes the action clearer. Passive voice remains correct when the actor is
-unknown, irrelevant, deliberately protected, or less important than the object.
+Conserva citas, nombres propios, términos técnicos y palabras usadas con precisión. «Ecosistema»
+puede ser el término exacto en biología. No intercambies un sinónimo vigilado por otro: mejora
+la afirmación o déjala. Tampoco confundas cortesía real con relleno de asistente.
+Revisa negritas innecesarias, viñetas siempre etiquetadas en negrita, emojis decorativos,
+mayúsculas inglesas en títulos y encabezados repetidos en la primera frase. Conserva formato
+que facilite consulta, accesibilidad o cumplimiento del encargo.
 
-### Structural regularity
+### Español natural
 
-Inspect the piece's dominant shape rather than hunting isolated words:
+Conserva tratamiento y variedad del autor, incluidos voseo y léxico regional. Evita calcos
+que dificulten entender, sin corregir una variante legítima por ser distinta. No impongas
+frases cortas en serie: una subordinada bien construida puede explicar mejor una condición.
+Revisa gerundios si confunden secuencia o sujeto, no por terminar en -ando/-iendo. No elimines
+adverbios en -mente que delimiten una afirmación. Respeta ¿?, ¡!, comillas, rayas de diálogo
+y puntuación española; no apliques reglas de contracciones inglesas. No cambies separadores
+decimales, unidades o fechas de forma ambigua.
 
-- sections with identical length and internal order;
-- paragraphs that can trade places without changing the argument;
-- headings doing all the organizing;
-- every example interpreted for the reader;
-- every paragraph ending on a line built to be quoted;
-- a conclusion that recaps or widens into generic optimism.
+## Conservar el material del autor
 
-Fix only the dominant problem. Move or combine material, let one section carry more weight,
-name the relation at a weak join, or stop at the last concrete consequence. Do not introduce a
-random tangent, unresolved thread, or sentence-length wobble merely to look irregular.
+Protege detalles verificables poco comunes, incisos reales, rectificaciones, sentimientos
+mixtos, dudas, repeticiones deliberadas, jerga profesional, referencias de época, humor y ritmo
+que surja del pensamiento. Son material que conservar, no señales que fabricar.
+Tras recortar, comprueba si el lector puede ver, oír o sentir lo necesario; si conoce la
+postura cuando procede; si la sintaxis expresa las relaciones; y si sobrevivieron calidez,
+humor y frases memorables justificadas. Añade solo material de la fuente. Una pregunta `[TK]`
+precisa vale más que color inventado.
 
-### Surface residue
+## Comprobar la reescritura
 
-Usually remove:
-
-```txt
-Chatbot wrapper       Certainly, Great question, Here is..., I hope this helps, Let me know if
-Meta narration        Let's dive in, In this section, As we will see, Without further ado
-Empty emphasis        It is important to note, At its core, The real question is
-Prestige vocabulary  delve, tapestry, landscape, pivotal, seamless, groundbreaking, unlock
-Decorative tails      highlighting..., underscoring..., fostering..., reflecting...
-Generic endings       In conclusion, Ultimately, Looking ahead, The future belongs to...
-```
-
-Treat the list as a search aid, not a ban. Keep quoted text, proper names, terms of art, and an
-ordinary word used accurately. Do not replace one watched synonym with another; rewrite the
-claim or leave it alone.
-
-Formatting can also reveal default assistant behavior: unnecessary bold, bold-label bullet
-lists, decorative emoji, title-case headings against house style, and a heading immediately
-restated by its first sentence. Preserve formatting that supports scanning, accessibility, or
-the requested medium.
-
-## Preserve human material
-
-Protect details and choices an author could defend:
-
-- an unusual checkable detail;
-- a real aside, self-correction, mixed feeling, or unresolved doubt;
-- deliberate repetition of the right ordinary word;
-- trade language, dated references, or a slightly surprising phrase that fits the author;
-- sentence-length variation produced by the thought;
-- an earned joke, contrast, rhythmic series, or closing beat.
-
-Do not insert these as “human signals.” Existing texture can be preserved; invented texture is
-performance.
-
-## Put craft back
-
-After subtraction, ask:
-
-```txt
-Can the reader see, hear, or feel anything where the piece most needs weight?
-Does evaluative writing reveal what the writer wants, prefers, fears, or doubts?
-Does the syntax express the relationship between thoughts?
-Did the edit remove warmth, humor, or a memorable line that the surrounding prose earned?
-```
-
-Add only material supported by the source. For a hollow passage, a precise `[TK]` question is a
-better edit than model-generated color.
-
-## Rewrite check
-
-Compare the finished text with the source:
-
-- Every factual claim, number, quotation, citation, attribution, condition, and link survives
-  with the same force.
-- No new personal experience, preference, source, metric, or causal claim appeared.
-- The rewrite does not reproduce the pattern it criticized under different punctuation.
-- The medium still works: procedures scan, warnings remain visible, emails state the ask, and
-  reference material remains retrievable.
-- The strongest original sentence was left alone unless changing it solved a real problem.
-- The ending stops on the last useful thought.
-
-If a rewrite fails one of these checks, repair it once. Do not keep iterating until every
-sentence shares the same polished register.
+Compara con la fuente: mismo contenido factual, cifras, citas, atribución, condiciones y
+enlaces; ninguna experiencia, preferencia, métrica ni causa nueva. Las eliminaciones deben
+respetar el alcance pedido, sin perder matices esenciales. Comprueba que no reproduces el
+patrón criticado con otra puntuación; que guías, avisos, mensajes y referencias funcionan;
+que has conservado las frases fuertes; y que el cierre acaba en la última idea útil.
+Corrige el fallo material una vez y termina, sin uniformar todas las frases.

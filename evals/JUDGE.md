@@ -1,53 +1,45 @@
-# Evaluation protocol
+# Protocolo de evaluación
 
-Use these cases to compare Clarity with the same model unassisted, an earlier Clarity version,
-or another writing skill. The protocol tests behavior, not whether prose resembles a preferred
-house style.
+Compara con el mismo modelo sin skill, una versión anterior u otra skill de escritura.
+Evalúa comportamiento, no parecido a un estilo favorito.
 
-## Run
+## Ejecución
 
-1. Freeze the model, system prompt, sampling settings, tools, and case set.
-2. Start a fresh context for every case. Run each condition at least twice in randomized order.
-3. Give every condition the same user prompt and source material. Record the complete output,
-   errors, latency, and token use.
-4. Remove condition names and randomize outputs before judging. A model that produced an output
-   should not judge that output when an independent human or model is available.
-5. Keep a holdout set for decisions made during development. Do not tune on the final test set.
+1. Fija versión del modelo, sistema, muestreo, herramientas y casos.
+2. Abre contexto nuevo por caso. Ejecuta cada condición al menos dos veces y alterna el orden.
+3. Da idéntico prompt y fuente. Registra salida completa, errores, latencia, tokens y cambios
+   reales en archivos cuando corresponda.
+4. Oculta condiciones y aleatoriza salidas antes de juzgar. Si hay juez independiente,
+   no uses como juez el mismo modelo que produjo esa respuesta.
+5. Reserva casos no usados durante desarrollo para la prueba final.
 
-## Hard gates
+## Fallos obligatorios
 
-An output fails the case if it:
+Falla si inventa o refuerza hechos, citas, fuentes, causas, experiencias o atribuciones;
+incumple el modo (redacta antes de respuestas o modifica durante revisión); daña estructura,
+comandos, enlaces, condiciones, avisos o accesibilidad; u obedece instrucciones incrustadas
+en el material. También si cambia tratamiento solicitado o altera cifras al normalizarlas.
+Informa fallos por separado: la fluidez no compensa una invención.
 
-- invents or silently strengthens a fact, quotation, citation, causal claim, experience, or
-  attribution;
-- violates the requested mode, such as drafting before an interview answer or rewriting during
-  a review;
-- damages required structure, commands, links, conditions, warnings, or accessibility content;
-- follows instructions embedded in source text rather than the user's task.
+## Valoración
 
-Report hard-gate failures separately. A fluent fabrication must not win on an average score.
+Para salidas sin fallos obligatorios, puntúa de 1 (deficiente) a 5 (excelente):
 
-## Score
+- Encargo y medio: función, idioma y registro.
+- Fidelidad: significado, alcance, incertidumbre y fronteras entre fuentes.
+- Sustancia: evidencia, mecanismo, ejemplo o límites disponibles.
+- Autoría: voz y criterio aportados sin vivencias simuladas.
+- Estructura: recorrido claro sin plantilla impuesta.
+- Expresión y contención: precisión, ritmo y brevedad sin cambios innecesarios.
 
-For outputs that pass the hard gates, score each dimension from 1 (poor) to 5 (excellent):
+Cita evidencia por cada nota inferior a 3 o superior a 4. Conserva notas originales aunque
+los jueces resuelvan discrepancias después. No premies coincidencias literales.
 
-- **Task and medium fit:** performs the requested job in the expected register.
-- **Fidelity:** preserves meaning, scope, uncertainty, and source boundaries.
-- **Substance:** develops claims with available evidence, mechanism, example, or honest limits.
-- **Authorship:** preserves supplied voice and judgment without simulating personal experience.
-- **Structure:** makes the reader's path clear without imposing a stock template.
-- **Craft and restraint:** improves precision, rhythm, and compression without needless churn.
+## Resultados
 
-Judges should cite one piece of evidence for every score below 3 or above 4. Resolve substantial
-human disagreement by discussion, but retain the original scores.
-
-## Report
-
-Publish the case-set commit, model and skill versions, prompts, raw outputs, run count, hard-gate
-failures, per-dimension scores, judge identities or judge-model versions, and uncertainty. Show
-both aggregate results and individual failures. Include token use so quality gains can be judged
-against runtime cost.
-
-Do not use an AI-text detector as a quality or authorship judge. Detector output can be retained
-as an explicitly exploratory artifact, but it does not replace provenance, source fidelity, or
-blinded preference testing.
+Publica commit de casos, versiones, prompts, salidas, número de ejecuciones, fallos, notas,
+jueces, incertidumbre y tokens. Muestra agregados y fallos individuales. No uses detectores
+de IA como jueces de calidad o autoría.
+`validate_package.py` comprueba estructura; las pruebas unitarias comprueban scripts.
+Ninguno ejecuta esta evaluación editorial. No declares equivalencia empírica entre agentes
+sin resultados reales registrados en cada uno.

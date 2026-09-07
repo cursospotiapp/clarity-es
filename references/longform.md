@@ -1,94 +1,68 @@
-# Authored long-form
+# Prosa extensa de autor
 
-Use this for essays, articles, newsletters, talks, narrative, fiction, and evocative writing.
-It turns Clarity's public writing principles into an editing pass. It does not override factual
-fidelity, the author's supplied voice, the medium, or the user's brief.
+Para ensayos, artículos, boletines, charlas, relatos, ficción y escritura evocadora. Estos
+criterios no sustituyen fidelidad factual, voz aportada, medio ni encargo.
 
-## Decide what the reader carries away
+## Qué se lleva el lector
 
-Picture one reader and distinguish what they already know from what they still need. The gap
-sets the piece's scope. Choose one intended takeaway appropriate to the register:
+Imagina un lector y distingue lo que sabe de lo que necesita. Esa distancia fija el alcance.
+Elige un resultado adecuado: postura sustentada para un argumento, mecanismo comprensible
+para una explicación, imagen o emoción para una evocación, acontecimientos y razón para
+seguir en un relato, idea recordable sin releer en una charla. Oriéntalo pronto. No fuerces
+una tesis en un texto cuyo propósito sea asombro, recuerdo, descripción o narración.
 
-- an argument needs a supported position someone could dispute;
-- an explanation needs a mechanism the reader can understand;
-- an evocation needs an image or feeling it can honestly produce;
-- a narrative needs events and a reason to continue;
-- a talk needs a thought a listener can retain without rereading.
+## Que cada frase aporte
 
-State or establish that takeaway early enough to orient the reader. Do not force a thesis onto
-a piece whose job is wonder, remembrance, description, or story.
+Cada frase añade hecho, imagen, mecanismo, ejemplo, matiz, consecuencia o cambio útil de
+tensión. Recorta preámbulos, explicaciones duplicadas y conclusiones que solo cumplen una
+plantilla. Deja el texto tan breve como permita su tarea.
+Prefiere palabras corrientes y precisas. Divide una frase si obliga a retener ideas inconexas
+o pierde el sujeto. Conserva una frase larga si el hilo sigue visible y la acumulación aporta
+impulso. En español, omitir el pronombre sujeto puede mejorar naturalidad sin perder el actor.
+La longitud invita a escuchar, no determina un defecto.
 
-## Make the attention pay
+## La primera frase
 
-Read each sentence against the one before it. It should add a fact, image, mechanism, example,
-qualification, consequence, or useful change in pressure. Cut throat-clearing, duplicated
-explanation, and conclusions that exist only because the form seems to require one. Let the
-piece be as short as its job permits.
+Debe iniciar el trabajo y dar una razón para leer la segunda. Puede servir un hecho, cifra,
+escena, imagen, pregunta o afirmación respaldados. Suelen servir menos una definición genérica,
+panorama histórico, anuncio de intención o resumen del tema. No inventes escenas ni datos
+sorprendentes: empieza de forma sencilla o pide material.
 
-Prefer the plain accurate word. Break a sentence when it asks the reader to hold unrelated
-ideas at once or loses its subject. Keep a long cumulative sentence when one visible subject
-carries the clauses and the accumulation creates momentum. Length is a prompt to listen, not a
-verdict.
+## Desarrollo
 
-## Give the opening one job
+Cada párrafo responde, complica o muestra algo planteado por el anterior, o hace necesario el
+siguiente. Explicita «porque», «aunque», «cuando», «si» o «por eso» cuando la proximidad imite
+razonamiento. Conserva yuxtaposiciones si aportan secuencia, sorpresa o rapidez.
+En un argumento, expresa la postura y da espacio a la limitación u objeción real más fuerte.
+Respóndela o concédela. No inventes un rival débil para vencerlo. Otros registros no necesitan
+un debate.
 
-The first sentence should make the intended reader willing to read the second while beginning
-the actual work of the piece. A supported fact, number, scene, image, question, or claim can do
-that. A generic definition, historical panorama, announcement of intent, or summary of the
-topic usually cannot.
+## Conservar al autor
 
-Do not manufacture a startling fact or scene to improve a lead. When the source contains no
-honest opening material, start plainly or ask the author for it.
+La muestra y el lenguaje aportado determinan vocabulario, formalidad, tratamiento, persona,
+puntuación y ritmo. ¿Diría esa frase al lector previsto? La prueba detecta erudición prestada,
+falsa humildad y formalidad innecesaria, sin exigir una transcripción cruda. Protege incisos,
+sentimientos mixtos, lenguaje profesional, repetición deliberada, humor y detalles raros
+reales. No los añadas para aparentar humanidad.
 
-## Make the piece develop
+## Recuperar lo que el recorte borró
 
-Each paragraph should answer something the previous paragraph raised, complicate it, show it,
-or make the next paragraph necessary. Name a load-bearing relation—because, although, once, if,
-so, which—when adjacency only imitates reasoning. Keep a clean juxtaposition when sequence,
-surprise, or speed is the point.
+- **Imagen:** ¿se puede ver, oír o sentir? Concreción sensorial y verificabilidad son distintas;
+  usa la que necesite el texto y permita la fuente.
+- **Postura:** ¿qué quiere, disfruta, teme, duda o rechaza el autor? La neutralidad puede ser
+  adecuada, pero debe responder al encargo.
+- **Ritmo:** la sintaxis expresa relaciones y experiencias; no suple razonamiento ausente.
+  Una serie, fragmento, frase larga o remate breve pueden estar justificados.
+- **Calidez:** recupera humor, curiosidad, generosidad o inquietud aportados que la edición borró.
+- **Frase memorable:** conserva la que el texto se ganó; simplifica la que solo suena profunda.
 
-For arguments, state the author's leaning and give the strongest real limitation or objection
-enough room to matter. Answer it or concede it. Do not invent a weak opponent merely to defeat
-one. Other registers do not owe a debate.
+No inventes imágenes, actitudes ni reacciones personales. Pregunta o deja `[TK]` si faltan.
 
-## Keep the author in the prose
+## Reescribir y escuchar
 
-Use the author's sample and supplied language to decide vocabulary, formality, contractions,
-first or second person, punctuation, and rhythm. Ask whether the author would comfortably say
-the sentence to the intended reader. That test catches borrowed erudition, fake humility, and
-formality with no communicative purpose; it does not require every written sentence to sound
-like an unedited transcript.
-
-Protect real asides, mixed feelings, trade language, deliberate repetition, jokes, and unusual
-details. Never insert those features as evidence of humanness.
-
-## Put positive craft back
-
-An edit that only subtracts often leaves colder prose. After cutting, inspect the passage that
-needs the most weight:
-
-- **Image:** Can the reader see, hear, or feel anything? Sensory specificity and verifiable
-  specificity are different; use the kind the piece needs and the source supports.
-- **Stance:** What does the author want, prefer, fear, enjoy, doubt, or refuse? Neutrality can be
-  right for reference prose, but in authored work it should be a choice rather than residue.
-- **Rhythm:** Let syntax carry a relation or an experience, never missing reasoning. An earned
-  series, fragment, long sentence, or short landing line may be exactly right.
-- **Warmth:** Restore humor, curiosity, generosity, unease, or delight when the draft supplied
-  it and the edit erased it.
-- **Memorable line:** Keep one the preceding material earned. Flatten a line whose cadence is
-  performing profundity the piece did not build.
-
-Do not invent an image, attitude, or personal reaction for the author. Ask or leave `[TK]` when
-positive craft requires source material that is missing.
-
-## Rewrite, then listen
-
-Real rewriting may move the third paragraph to the opening, combine two sections, remove the
-writer's favorite passage, or uncover the plain sentence buried inside a polished one. Make
-those changes only within the scope the user authorized. Smoothing every rough edge is not
-rewriting when the rough edge carries the thought.
-
-Before delivery, read or subvocalize the complete piece once. Listen for plodding paragraphs,
-breathless clauses, repeated sentence shapes, abrupt changes of footing, and language the author
-would never say. Fix the stumbles that obstruct the reader. Do not continue polishing after the
-piece works.
+Reescribir puede llevar el tercer párrafo al inicio, combinar secciones, recortar un pasaje
+querido o descubrir la frase sencilla enterrada en otra solemne. Hazlo dentro del alcance
+autorizado. No alises una aspereza que contiene la idea.
+Lee o subvocaliza el conjunto una vez. Detecta párrafos pesados, frases sin respiración,
+estructuras repetidas, saltos bruscos y lenguaje impropio del autor. Corrige lo que dificulte
+leer y termina cuando funcione. Cierra en la última idea útil, sin recapitulación automática.

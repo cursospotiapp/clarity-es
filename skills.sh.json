@@ -2,8 +2,8 @@
   "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
   "groupings": [
     {
-      "title": "Writing",
-      "description": "Drafting, rewriting, and reviewing prose so it carries a point of view instead of reading like generic model output.",
+      "title": "Escritura en español",
+      "description": "Redactar, reescribir y revisar textos con claridad, precisión y voz propia, sin inventar hechos.",
       "skills": ["clarity"]
     }
   ]
