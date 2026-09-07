@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "description": "Casos semánticos en español. Conservan los once casos de comportamiento del conjunto original y añaden casos lingüísticos. No se exige una redacción exacta.",
+  "description": "Casos semánticos en español de España por defecto. Conservan los once casos de comportamiento del conjunto original y añaden casos lingüísticos. La variante distinta al es-ES solo se conserva si se pide expresamente. No se exige una redacción exacta.",
   "cases": [
     {
       "id": "rewrite_preserves_attribution_and_uncertainty", "mode": "rewrite", "category": "factual_fidelity",
@@ -87,11 +87,11 @@
       "prohibitions": ["No responder solo con crítica, preguntar innecesariamente ni inventar aprobación."]
     },
     {
-      "id": "preserve_voseo", "mode": "rewrite", "category": "authorship",
+      "id": "preserve_voseo_only_when_requested", "mode": "rewrite", "category": "authorship",
       "prompt": "Mejorá este mensaje con clarity. Mantené el voseo.",
       "input": "Te quería pedir que, por favor, revises el archivo antes del lunes. Si encontrás un error, avisame y lo vemos juntos.",
-      "requirements": ["Mantener voseo y cordialidad.", "Conservar plazo y petición de aviso si hay error."],
-      "prohibitions": ["No cambiar a tú, usted o vosotros ni añadir regionalismos ajenos."]
+      "requirements": ["Mantener voseo coherente y cordialidad porque se pidió expresamente.", "Conservar plazo y petición de aviso si hay error."],
+      "prohibitions": ["No cambiar a tú, usted o vosotros cuando el voseo se pidió.", "No mezclar paradigmas en el mismo texto."]
     },
     {
       "id": "spanish_omitted_subject_is_valid", "mode": "review", "category": "false_positive",
@@ -106,6 +106,24 @@
       "input": "Cabe destacar que el límite es de 1.250,50 € y el umbral de 3,5 ms. Ana escribió: «No está aprobado». Consulta [el informe](https://example.com/informe?v=2#limites).",
       "requirements": ["Conservar valor y unidades de 1.250,50 € y 3,5 ms.", "Conservar literalmente cita, atribución y destino del enlace."],
       "prohibitions": ["No convertir a 1,25050 euros ni 35 ms.", "No alterar cita, aprobación ni URL."]
+    },
+    {
+      "id": "default_to_es_ES",
+      "mode": "rewrite",
+      "category": "authorship",
+      "prompt": "Reescribe este texto con clarity. Devuelve solo el texto.",
+      "input": "Si encontrás un error, avisame antes del jueves a las 14:00 y lo revisamos juntos.",
+      "requirements": ["Sin petición de variante, normalizar a español de España: «Si encuentras un error, avísame antes del jueves a las 14:00 y lo revisamos juntos».", "Conservar plazo y tilde imperativa correcta."],
+      "prohibitions": ["No conservar voseo si no se pidió.", "No mezclar «encontrás» con «avísame» ni «encuentras» con «avisame»."]
+    },
+    {
+      "id": "rewrite_separates_report_and_request",
+      "mode": "rewrite",
+      "category": "medium_fit",
+      "prompt": "Reescribe este texto con clarity para una actualización breve. Devuelve solo el texto.",
+      "input": "Es importante destacar que nuestra prueba interna sugiere que el arranque podría ser aproximadamente un 12 % más rápido en Pixel 8. La muestra fue de 40 arranques en frío y no probamos dispositivos anteriores. Mina cree que el cambio de caché explica la mayor parte de la mejora. Si encontrás un error, avisame antes del jueves a las 14:00 y lo revisamos juntos.",
+      "requirements": ["Quitar la muletilla y resolver la doble cobertura sin reforzar la afirmación.", "Agrupar respaldo (40 arranques, Pixel 8, límite) junto a la prueba y atribuir la causa a Mina.", "Separar informe y petición en párrafos distintos con la petición es-ES por defecto."],
+      "prohibitions": ["No entregar casi-verbatim que solo quite una muletilla.", "No convertir el 12 % en hecho demostrado ni añadir dispositivos.", "No conservar voseo sin petición expresa."]
     },
     {
       "id": "unreadable_document_is_not_invented", "mode": "rewrite", "category": "factual_fidelity",

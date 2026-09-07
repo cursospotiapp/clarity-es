@@ -86,7 +86,7 @@ como comandos independientes; no hacen falta para pedir «reescríbelo con clari
 ## Adaptación
 
 - Instrucciones, guías, comandos, ejemplos y casos de evaluación en español.
-- Conserva variante, tuteo, ustedeo o voseo; no fuerza español de un país.
+- Usa español de España por defecto (tuteo, «vosotros» plural, tildes imperativas); conserva voseo u otra variante solo si se pide expresamente, con coherencia completa.
 - Respeta sujeto omitido, pasivas útiles, gerundios precisos y conectores justificados.
 - Analiza tildes, ñ, Unicode normalizado, comillas angulares, decimales y léxicos españoles.
 - Mantiene cuatro modos, fidelidad factual, límites de autoría y claves JSON del original.
@@ -126,7 +126,7 @@ Las comprobaciones realizadas se documentan en [evals/VALIDATION.md](evals/VALID
 ## Procedencia y mantenimiento
 
 Basado en `addyosmani/clarity`, commit `e27ceeff60368cf6966b4ea00a5b9b36418ee9a0`
-(skill 0.2.1). Esta adaptación usa 0.3.0. Conserva licencia MIT y copyright original en
+(skill 0.2.1). Esta adaptación usa 0.4.0. Conserva licencia MIT y copyright original en
 [LICENSE](LICENSE). No es una traducción oficial del autor.
 
 Los ejemplos son nuevos y didácticos; no se atribuyen a Addy Osmani. Se eliminan web,
